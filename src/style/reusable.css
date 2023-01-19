@@ -1,0 +1,10 @@
+.gray-circle {
+	width: 30px;
+	height: 30px;
+	display: flex;
+	cursor: pointer;
+	align-items: center;
+	border-radius: 100px;
+	justify-content: center;
+	background-color: #5B5E63;
+}
