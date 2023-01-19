@@ -1,16 +1,10 @@
 body {
   margin: 0;
 	height: -webkit-fill-available;
-	/* -moz-osx-font-smoothing: grayscale;
-	-webkit-font-smoothing: antialiased;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif; */
 }
 
-/* code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
-} */
-
 html {
+	font-family: "Inter";
 	background-color: #171A21;
 	height: -webkit-fill-available;
 }
@@ -26,3 +20,8 @@ p, h1 {
 	justify-content: space-between;
 	height: -webkit-fill-available;
 }
+
+@font-face {
+	font-family: "Inter";
+	src: local("Inter"), url("./assets/fonts/Inter.ttf") format("truetype");
+	}
