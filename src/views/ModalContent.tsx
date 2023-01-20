@@ -1,13 +1,35 @@
+import { GameI } from "../types/game";
 import { SortValueI } from "../types/sort";
 import React, { ReactElement } from "react";
 import { setChangeValue } from "../redux/additional";
+import { sortGamesListByPrice, sortGamesListByDate } from "../redux/games";
 import { sortValues, sortTypes } from "../models/sort";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../types/redux";
 
-function ModalContent(): ReactElement {
+interface PropsI {
+	onClose: () => void;
+}
+
+function ModalContent({onClose}: PropsI): ReactElement {
 	const dispatch: AppDispatch = useDispatch();
+	const games: Array<GameI> = useSelector((state: RootState) => state.games);
 	const {sortType, sortValue} = useSelector((state: RootState) => state.additional);
+
+	const actionButton = (): void => {
+		switch(sortValue) {
+		case "Price":
+			dispatch(sortGamesListByPrice({data: games, sortValue: sortType}));
+			break;
+		case "Publish Date":
+			dispatch(sortGamesListByDate({data: games, sortValue: sortType}));
+			break;
+		default:
+			alert("Something went wrong with sorting function");
+			break;
+		}
+		onClose();
+	};
 
 	const chosenElStyle = (value: string, chosenValue: string): object => {
 		return (value === chosenValue) ? {
@@ -47,6 +69,10 @@ function ModalContent(): ReactElement {
 					}
 				</div>
 			</div>
+			<button 
+				onClick={actionButton}
+				className="header-button sort-button"
+			>Sort games list</button>
 		</div>
 	);
 }

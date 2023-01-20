@@ -20,6 +20,11 @@
 	align-items: center;
 }
 
+.sort-button {
+	margin-inline: auto;
+	border-radius: 10px;
+}
+
 .sort-value-box {
 	display: flex;
 	align-items: center;
@@ -31,5 +36,6 @@
 }
 
 .sort-value, .sort-value-box {
+	cursor: pointer;
 	margin-left: 0.5rem;
 }

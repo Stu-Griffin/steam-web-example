@@ -22,34 +22,19 @@ function Footer(): ReactElement {
 
 	return (
 		<footer>
-			<div 
-				onClick={switchPage}
-				className="gray-circle"
-			>
+			<div onClick={switchPage} className="gray-circle">
 				<img src={LeftArrowIcon}/>
 			</div>
-			<div 
-				onClick={() => nextPage(pageStart)}
-				className="gray-circle"
-			>
+			<div onClick={() => nextPage(pageStart)} className="gray-circle">
 				<p>{pageStart}</p>
 			</div>
-			<div 
-				onClick={() => nextPage(pageStart+1)}
-				className="gray-circle"
-			>
+			<div onClick={() => nextPage(pageStart+1)} className="gray-circle">
 				<p>{pageStart+1}</p>
 			</div>
-			<div 
-				onClick={() => nextPage(pageStart+2)}
-				className="gray-circle"
-			>
+			<div onClick={() => nextPage(pageStart+2)} className="gray-circle">
 				<p>{pageStart+2}</p>
 			</div>
-			<div 
-				onClick={switchPage}
-				className="gray-circle"
-			>
+			<div onClick={switchPage} className="gray-circle">
 				<img src={RightArrowIcon}/>
 			</div>
 		</footer>

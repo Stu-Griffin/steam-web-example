@@ -22,6 +22,11 @@ main {
 	background-color: #17323A;
 }
 
+.play-button {
+	top: -1rem;
+	position: relative;
+}
+
 .game-card-up {
 	height: 55%;
 	display: flex;
@@ -56,6 +61,12 @@ main {
 .game-card-down img {
 	width: 25px;
 	cursor: pointer;
+}
+
+.game-card-up-part {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 
 .game-card-price-box {

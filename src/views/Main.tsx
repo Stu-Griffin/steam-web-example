@@ -1,5 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
 import { GameI } from "../types/game";
+import PlayIcon from "../assets/icons/play.svg";
 import LikeDislikeIcon from "./LikeDislikeIcon";
 import { AdditionalI } from "../types/additional";
 import { setChangeValue } from "../redux/additional";
@@ -22,6 +23,13 @@ function Main(): ReactElement {
 		localStorage.setItem("Liked-games", JSON.stringify(likedGames));
 	}, [likedGames]);
 
+	const playIcon = (appId: string|undefined): ReactElement|undefined => {
+		return (likedGames.find((likedEl: GameI) => likedEl.appId === appId)) &&
+			<div className="gray-circle play-button">
+				<img src={PlayIcon} alt="play icon"/>
+			</div>;
+	};
+
 	return (
 		<main>
 			{
@@ -31,7 +39,10 @@ function Main(): ReactElement {
 							<img className="game-card-image" src={el.imgUrl} alt="game image"/>
 							<div className="game-card-info">
 								<div className="game-card-up">
-									{gameTitle(el.title)}
+									<div className="game-card-up-part">
+										{gameTitle(el.title)}
+										{playIcon(el.appId)}
+									</div>
 									<p>{el.released}</p>
 								</div>
 								<div className="game-card-down">
