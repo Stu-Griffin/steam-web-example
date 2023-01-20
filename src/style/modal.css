@@ -1,0 +1,35 @@
+.box {
+	display: flex;
+	align-items: center;
+}
+
+.modal {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: space-between;
+}
+
+.title {
+	font-weight: bold;
+}
+
+.modal-box {
+	display: flex;
+	align-items: center;
+}
+
+.sort-value-box {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.sort-value-box img {
+	margin-left: 0.25rem;
+}
+
+.sort-value, .sort-value-box {
+	margin-left: 0.5rem;
+}

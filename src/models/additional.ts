@@ -1,0 +1,9 @@
+import { AdditionalI } from "../types/additional";
+import { sortTypes, sortValues } from "../models/sort";
+
+export const additional: AdditionalI = {
+	page: 1,
+	likedGames: [],
+	sortType: sortTypes[0],
+	sortValue: sortValues[0].value,
+};
