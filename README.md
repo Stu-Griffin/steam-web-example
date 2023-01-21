@@ -1,3 +1,37 @@
+# App details
+
+## Technology stack: ##`React.JS` ##`TypeScript` ##`Eslint` ##`Redux` ##`Redux-toolkit` ##`React-router` ##`react-modal` ##`react-dotenv` ##`axios`.
+
+## Used API: [Steam API](https://rapidapi.com/psimavel/api/steam2/).
+
+## Result: [App was hosted on Vercel](https://steam-web-example-km2b4szq9-stu-griffin.vercel.app/).
+
+
+# App tutorial
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
