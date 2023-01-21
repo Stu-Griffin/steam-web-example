@@ -1,4 +1,4 @@
-# App details
+**App details**
 
 ## Technology stack: `React.JS`, `TypeScript`, `Eslint`, `Redux`, `Redux-toolkit`, `React-router`, `react-modal`, `react-dotenv`, `axios`.
 
@@ -7,7 +7,7 @@
 ## Result: [App was hosted on Vercel](https://steam-web-example-km2b4szq9-stu-griffin.vercel.app/).
 
 
-# App tutorial
+**App tutorial**
 
 ## Header
 
