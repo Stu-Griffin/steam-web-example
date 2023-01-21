@@ -14,7 +14,7 @@ export default function Main(): ReactElement {
 	const dispatch: AppDispatch = useDispatch();
 	const games: Array<GameI> = useSelector((state: RootState) => state.games);
 	const { likedGames, loaderStatus }: AdditionalI = useSelector((state: RootState) => state.additional);
-	console.log(games);
+
 	useEffect(() => {
 		getLikedGamesFromLocalStorage(dispatch);
 	}, []);
