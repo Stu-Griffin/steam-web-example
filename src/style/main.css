@@ -78,3 +78,27 @@ main {
 	margin-right: 0.5rem;
 	text-decoration: line-through;
 }
+
+
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #171A21;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+	border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

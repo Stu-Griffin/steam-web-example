@@ -32,7 +32,7 @@ function Main(): ReactElement {
 	return (
 		<main>
 			{
-				(loaderStatus) ?
+				(!loaderStatus) ?
 					<Loader/>
 					:
 					games.map((el: GameI): ReactElement => {
