@@ -1,5 +1,5 @@
-import { GameI } from "../types/game";
-import { games } from "../models/games";
+import { GameI } from "../../types/game";
+import { games } from "../../models/games";
 import { createSlice } from "@reduxjs/toolkit";
 
 interface arrRes {

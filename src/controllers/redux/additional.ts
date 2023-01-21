@@ -1,7 +1,7 @@
+import { GameI } from "../../types/game";
 import { createSlice } from "@reduxjs/toolkit";
-import { AdditionalI } from "../types/additional";
-import { additional } from "../models/additional";
-import { GameI } from "../types/game";
+import { AdditionalI } from "../../types/additional";
+import { additional } from "../../models/additional";
 
 export const AdditionalSlice = createSlice({
 	name: "additional",
@@ -12,12 +12,12 @@ export const AdditionalSlice = createSlice({
 			return state;
 		},
 		changeLikedGames: (state: AdditionalI, action): AdditionalI => {
-			switch(action.payload.type) {
+			switch (action.payload.type) {
 			case "add":
-				state.likedGames.push(action.payload.value);
+				(state.likedGames as Array<GameI>).push(action.payload.value);
 				break;
 			case "remove":
-				state.likedGames = state.likedGames.filter((el: GameI) => el.appId !== action.payload.value.appId);
+				state.likedGames = (state.likedGames as Array<GameI>).filter((el: GameI) => el.appId !== action.payload.value.appId);
 				break;
 			default:
 				return state;

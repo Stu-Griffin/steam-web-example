@@ -1,6 +1,6 @@
 import React, { ReactElement } from "react";
 
-function Loader(): ReactElement {
+export default function Loader(): ReactElement {
 	return (
 		<div className="lds-roller">
 			<div></div>
@@ -14,5 +14,3 @@ function Loader(): ReactElement {
 		</div>
 	);
 }
-
-export default Loader;

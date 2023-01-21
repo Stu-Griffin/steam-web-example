@@ -1,11 +1,11 @@
 import "./index.css";
 import App from "./App";
 import React from "react";
-import { store } from "./redux/store";
 import { Provider } from "react-redux";
 import ReactDOM from "react-dom/client";
 import GamePage from "./views/GamePage";
 import reportWebVitals from "./reportWebVitals";
+import { store } from "./controllers/redux/store";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const router = createBrowserRouter([

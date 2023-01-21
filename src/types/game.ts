@@ -7,3 +7,23 @@ export type GameI = {
 	released:string;
 	reviewSummary?:string;
 };
+
+export interface TagI {
+	url: string;
+	name: string;
+}
+
+export interface GameCardI {
+	title: string;
+	imgUrl: string;
+	released: string;
+	tags: Array<TagI>;
+	description: string;
+	developer: DeveloperPublisherI;
+	publisher: DeveloperPublisherI;
+}
+
+export interface DeveloperPublisherI {
+	link: string;
+	name: string;
+}

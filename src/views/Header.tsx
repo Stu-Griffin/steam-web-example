@@ -1,11 +1,10 @@
 import Modal from "react-modal";
-import { setGames } from "../redux/games";
 import ModalContent from "./ModalContent";
-import { getGames } from "../controllers/games";
 import LogoIcon from "../assets/icons/logo.svg";
 import { AdditionalI } from "../types/additional";
-import { setChangeValue } from "../redux/additional";
+import { searchGames } from "../controllers/games";
 import SettingIcon from "../assets/icons/setting.svg";
+import { setGames } from "../controllers/redux/games";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../types/redux";
 import React, { ReactElement, useState, useEffect } from "react";
@@ -24,25 +23,19 @@ const customStyles = {
 	},
 };
 
-function Header(): ReactElement {
+export default  function Header(): ReactElement {
 	const dispatch: AppDispatch = useDispatch();
 	const [inputValue, setInputValue] = useState<string>("");
 	const [modalWindow, setModalWindow] = useState<boolean>(false);
 	const [likedListShow, setLikedListShow] = useState<boolean>(false);
 	const {likedGames, page}: AdditionalI = useSelector((state: RootState) => state.additional);
 
-	// useEffect(() => {
-	// 	searchAction();
-	// }, [page]);
-
-	const searchAction = async (): Promise<void> => {
-		dispatch(setChangeValue({key: "loaderStatus", value: true}));
-		await getGames(dispatch, page, inputValue);
-		dispatch(setChangeValue({key: "loaderStatus", value: false}));
-	};
+	useEffect(() => {
+		searchGames(dispatch, (page as number), inputValue);
+	}, [page]);
 
 	const likeListButton = (): void => {
-		(!likedListShow) ? dispatch(setGames(likedGames)) : searchAction();
+		(!likedListShow) ? dispatch(setGames(likedGames)) : searchGames(dispatch, (page as number), inputValue);
 		setLikedListShow((state: boolean) => !state);
 	};
 
@@ -62,12 +55,10 @@ function Header(): ReactElement {
 					<ModalContent onClose={() => setModalWindow(false)}/>
 				</Modal>
 				<div className="header-buttons-list-box">
-					<button onClick={searchAction} className="header-button-list header-button-list-left">Search</button>
+					<button onClick={() => searchGames(dispatch, (page as number), inputValue)} className="header-button-list header-button-list-left">Search</button>
 					<button onClick={likeListButton} className="header-button-list header-button-list-right" style={backgroundColorLikelistButton()}>Like list</button>
 				</div>
 			</div>
 		</header>
 	);
 }
-
-export default Header;
