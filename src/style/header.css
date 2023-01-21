@@ -50,15 +50,6 @@ header {
   align-items: center;
 }
 
-.header-button-list {
-	border: none;
-	color: white;
-	font-size: 18px;
-	cursor: pointer;
-	padding: 0.5rem 1rem;
-	background-color: #837F7F;
-}
-
 .header-button-list-left {
 	border-top-left-radius: 10px;
 	border-bottom-left-radius: 10px;

@@ -23,12 +23,14 @@ export const GamesSlice = createSlice({
 				arrForSorting: [],
 				arrNotForSorting: [],
 			});
+
 			switch(action.payload.sortValue) {
 			case "Lower to bigger":
-				state = ([...arr.arrNotForSorting, ...arr.arrForSorting.sort((a: GameI, b: GameI) => (new Date(a.released) as any) - (new Date(b.released) as any))]);
+				state = ([...arr.arrNotForSorting, ...arr.arrForSorting.sort((a: GameI, b: GameI) => (new Date(a.released)).getTime() - (new Date(b.released)).getTime())]);
+				console.log(state);
 				break;
 			case "Bigger to lower":
-				state = ([...arr.arrNotForSorting, ...arr.arrForSorting.sort((a: GameI, b: GameI) => (new Date(b.released) as any) - (new Date(a.released) as any))]);
+				state = ([...arr.arrNotForSorting, ...arr.arrForSorting.sort((a: GameI, b: GameI) => (new Date(b.released)).getTime() - (new Date(a.released)).getTime())]);
 				break;
 			default:
 				alert("Something went wrong with sorting by date");

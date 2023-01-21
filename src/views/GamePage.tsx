@@ -32,11 +32,11 @@ function GamePage(): ReactElement {
 					<div className="game-box">
 						<div className="game-info-box">
 							<p>Developer:</p>
-							<a className="game-info-box-value" href={(gameInfo as GameCardI)?.developer.link}>{(gameInfo as GameCardI).developer.name}</a>
+							<a className="game-info-box-value" href={(gameInfo as GameCardI)?.developer.link}>{(gameInfo as GameCardI)?.developer.name}</a>
 						</div>
 						<div className="game-info-box">
 							<p>Publisher:</p>
-							<a className="game-info-box-value" href={(gameInfo as GameCardI)?.publisher.link}>{(gameInfo as GameCardI).publisher.name}</a>
+							<a className="game-info-box-value" href={(gameInfo as GameCardI)?.publisher.link}>{(gameInfo as GameCardI)?.publisher.name}</a>
 						</div>
 					</div>
 					<div className="tag-area">

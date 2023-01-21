@@ -71,7 +71,7 @@ export default function ModalContent({ onClose }: PropsI): ReactElement {
 					})}
 				</div>
 			</div>
-			<button onClick={actionButton} className="header-button sort-button">Sort games list</button>
+			<button onClick={actionButton} className="button sort-button">Sort games list</button>
 		</div>
 	);
 }

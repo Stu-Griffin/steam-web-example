@@ -55,8 +55,8 @@ export default  function Header(): ReactElement {
 					<ModalContent onClose={() => setModalWindow(false)}/>
 				</Modal>
 				<div className="header-buttons-list-box">
-					<button onClick={() => searchGames(dispatch, (page as number), inputValue)} className="header-button-list header-button-list-left">Search</button>
-					<button onClick={likeListButton} className="header-button-list header-button-list-right" style={backgroundColorLikelistButton()}>Like list</button>
+					<button onClick={() => searchGames(dispatch, (page as number), inputValue)} className="button header-button-list-left">Search</button>
+					<button onClick={likeListButton} className="button header-button-list-right" style={backgroundColorLikelistButton()}>Like list</button>
 				</div>
 			</div>
 		</header>
