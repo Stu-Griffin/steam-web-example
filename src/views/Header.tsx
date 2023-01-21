@@ -31,20 +31,18 @@ function Header(): ReactElement {
 	const [likedListShow, setLikedListShow] = useState<boolean>(false);
 	const {likedGames, page}: AdditionalI = useSelector((state: RootState) => state.additional);
 
-	// useEffect(() => {
-	// 	getGames(dispatch, page, "Counter");
-	// }, [page]);
+	useEffect(() => {
+		searchAction();
+	}, [page]);
 
-	const searchButton = (): void => {
+	const searchAction = (): void => {
+		dispatch(setChangeValue({key: "loaderStatus", value: true}));
 		getGames(dispatch, page, inputValue);
+		dispatch(setChangeValue({key: "loaderStatus", value: false}));
 	};
 
 	const likeListButton = (): void => {
-		if(!likedListShow) {
-			dispatch(setGames(likedGames));
-		} else {
-			dispatch(setChangeValue({key: "page", value: 1}));
-		}
+		(!likedListShow) ? dispatch(setGames(likedGames)) : searchAction();
 		setLikedListShow((state: boolean) => !state);
 	};
 
@@ -64,7 +62,7 @@ function Header(): ReactElement {
 					<ModalContent onClose={() => setModalWindow(false)}/>
 				</Modal>
 				<div className="header-buttons-box">
-					<button onClick={searchButton} className="header-button header-button-left">Search</button>
+					<button onClick={searchAction} className="header-button header-button-left">Search</button>
 					<button onClick={likeListButton} className="header-button header-button-right" style={backgroundColorLikelistButton()}>Like list</button>
 				</div>
 			</div>

@@ -1,3 +1,4 @@
+import Loader from "./Loader";
 import { v4 as uuidv4 } from "uuid";
 import { GameI } from "../types/game";
 import PlayIcon from "../assets/icons/play.svg";
@@ -12,7 +13,7 @@ import { gameTitle, gamePrice } from "../controllers/game-card";
 function Main(): ReactElement {
 	const dispatch: AppDispatch = useDispatch();
 	const games: Array<GameI> = useSelector((state: RootState) => state.games);
-	const {likedGames}: AdditionalI = useSelector((state: RootState) => state.additional);
+	const {likedGames, loaderStatus}: AdditionalI = useSelector((state: RootState) => state.additional);
 
 	useEffect(() => {
 		const result: string|null = localStorage.getItem("Liked-games");
@@ -33,26 +34,29 @@ function Main(): ReactElement {
 	return (
 		<main>
 			{
-				games.map((el: GameI): ReactElement => {
-					return (
-						<div key={el.appId || uuidv4()} className="game-card">
-							<img className="game-card-image" src={el.imgUrl} alt="game image"/>
-							<div className="game-card-info">
-								<div className="game-card-up">
-									<div className="game-card-up-part">
-										{gameTitle(el.title)}
-										{playIcon(el.appId)}
+				(loaderStatus) ?
+					<Loader/>
+					:
+					games.map((el: GameI): ReactElement => {
+						return (
+							<div key={el.appId || uuidv4()} className="game-card">
+								<img className="game-card-image" src={el.imgUrl} alt="game image"/>
+								<div className="game-card-info">
+									<div className="game-card-up">
+										<div className="game-card-up-part">
+											{gameTitle(el.title)}
+											{playIcon(el.appId)}
+										</div>
+										<p>{el.released}</p>
 									</div>
-									<p>{el.released}</p>
-								</div>
-								<div className="game-card-down">
-									{gamePrice(el.price)}
-									<LikeDislikeIcon el={el} />
+									<div className="game-card-down">
+										{gamePrice(el.price)}
+										<LikeDislikeIcon el={el} />
+									</div>
 								</div>
 							</div>
-						</div>
-					);
-				})
+						);
+					})
 			}
 		</main>
 	);
