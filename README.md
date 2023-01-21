@@ -30,3 +30,7 @@ If a game is in the like list, this is displayed (red heart icon) and a play ico
 ## Footer 
 
 Buttons for pagination appear 3 in a row, they can be used to navigate between game lists, the buttons at the edges allow you to change the values of pagination buttons
+
+
+**NOTE**
+Since programm uses a free version of the API, there are restrictions on the number of requests per minute and month
