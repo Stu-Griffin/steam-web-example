@@ -38,6 +38,6 @@ class GameAPIActions {
 	};
 }
 
-const gameAPI = new GameAPIActions("https://steam2.p.rapidapi.com", "steam2.p.rapidapi.com", "73665120b4msh2ba5486c199a33dp1a9f86jsn9f76649a6ba7");
+const gameAPI = new GameAPIActions(`${process.env.REACT_APP_API_URL}`, `${process.env.REACT_APP_API_HOST}`, `${process.env.REACT_APP_API_KEY}`);
 
 export default gameAPI;
