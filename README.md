@@ -1,6 +1,6 @@
 # App details
 
-## Technology stack: ##`React.JS` ##`TypeScript` ##`Eslint` ##`Redux` ##`Redux-toolkit` ##`React-router` ##`react-modal` ##`react-dotenv` ##`axios`.
+## Technology stack: `React.JS`, `TypeScript`, `Eslint`, `Redux`, `Redux-toolkit`, `React-router`, `react-modal`, `react-dotenv`, `axios`.
 
 ## Used API: [Steam API](https://rapidapi.com/psimavel/api/steam2/).
 
