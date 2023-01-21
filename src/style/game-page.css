@@ -5,13 +5,23 @@
 	margin-top: 3rem;
 }
 
-.game-title {
+.game-page-title {
 	text-decoration: underline;
 }
 
-.game-image {
+.game-page-image {
 	margin-top: 1rem;
 	width: -webkit-fill-available;
+}
+
+.game-page-info-area {
+	padding: 0.5rem 1rem;
+}
+
+.game-box {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
 
 .game-description {
@@ -31,14 +41,14 @@
 	text-decoration: none;
 }
 
-.game-info-area {
-	padding: 0.5rem 1rem;
+.tag-area {
+	margin-top: 0.75rem;
 }
 
-.game-box {
+.tag-box {
 	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
+	flex-wrap: wrap;
+  align-items: center;
 }
 
 .tag {
@@ -49,10 +59,4 @@
 	text-decoration: none;
 	padding: 0.25rem 0.25rem;
   background: rgba( 103, 193, 245, 0.2 );
-}
-
-.tag-area {
-	display: flex;
-	flex-wrap: wrap;
-  align-items: center;
 }

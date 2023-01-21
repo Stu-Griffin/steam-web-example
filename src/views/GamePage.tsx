@@ -46,9 +46,9 @@ function GamePage(): ReactElement {
 			<Loader/>
 			:
 			<div className="game-page">
-				<h2 className="game-title">{gameInfo?.title}</h2>
-				<img className="game-image" src={gameInfo?.imgUrl}/>
-				<div className="game-info-area game-box">
+				<h2 className="game-page-title">{gameInfo?.title}</h2>
+				<img className="game-page-image" src={gameInfo?.imgUrl}/>
+				<div className="game-page-info-area game-box">
 					<p className="game-description">{gameInfo?.description}</p>
 					<div className="game-info-box">
 						<p>Released date:</p>
@@ -64,9 +64,9 @@ function GamePage(): ReactElement {
 							<a className="game-info-box-value" href={gameInfo?.publisher.link}>{gameInfo?.publisher.name}</a>
 						</div>
 					</div>
-					<div style={{marginTop: "0.75rem"}}>
+					<div className="tag-area">
 						<p>Popular tags:</p>
-						<div className="tag-area">
+						<div className="tag-box">
 							{
 								gameInfo?.tags.map((tag: TagI, id: number) => {
 									return (

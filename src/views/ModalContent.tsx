@@ -44,9 +44,9 @@ function ModalContent({onClose}: PropsI): ReactElement {
 
 	return (
 		<div className="modal">
-			<div className="modal-box">
+			<div className="modal-el-box">
 				<p className="title">Sort value:</p>
-				<div className="box">
+				<div className="modal-box">
 					{
 						sortValues.map((el: SortValueI, id: number): ReactElement => {
 							return (
@@ -59,9 +59,9 @@ function ModalContent({onClose}: PropsI): ReactElement {
 					}
 				</div>
 			</div>
-			<div className="modal-box">
+			<div className="modal-el-box">
 				<p className="title">Sort type:</p>
-				<div className="box">
+				<div className="modal-box">
 					{
 						sortTypes.map((el: string, id: number): ReactElement => {
 							return (

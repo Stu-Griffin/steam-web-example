@@ -61,9 +61,9 @@ function Header(): ReactElement {
 				<Modal ariaHideApp={false} isOpen={modalWindow} style={customStyles} contentLabel="Sorting Modal" onRequestClose={() => setModalWindow(false)}>
 					<ModalContent onClose={() => setModalWindow(false)}/>
 				</Modal>
-				<div className="header-buttons-box">
-					<button onClick={searchAction} className="header-button header-button-left">Search</button>
-					<button onClick={likeListButton} className="header-button header-button-right" style={backgroundColorLikelistButton()}>Like list</button>
+				<div className="header-buttons-list-box">
+					<button onClick={searchAction} className="header-button-list header-button-list-left">Search</button>
+					<button onClick={likeListButton} className="header-button-list header-button-list-right" style={backgroundColorLikelistButton()}>Like list</button>
 				</div>
 			</div>
 		</header>

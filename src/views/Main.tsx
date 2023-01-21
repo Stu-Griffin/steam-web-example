@@ -9,7 +9,6 @@ import { setChangeValue } from "../redux/additional";
 import { useDispatch, useSelector } from "react-redux";
 import React, { ReactElement, useEffect } from "react";
 import { AppDispatch, RootState } from "../types/redux";
-import { gameTitle, gamePrice } from "../controllers/game-card";
 
 function Main(): ReactElement {
 	const navigate = useNavigate();
@@ -29,6 +28,33 @@ function Main(): ReactElement {
 			</div>;
 	};
 
+	const gameTitle = (title: string): ReactElement => {
+		return (title.length > 25) ? <p>{title.slice(0, 25)}...</p> : <p>{title}</p>;
+	};
+	
+	const gamePrice = (price: string): ReactElement => {
+		if(price.trim() !== "" && (price.toLowerCase()).trim() !== "free to play"  && (price.toLowerCase()).trim() !== "free demo" && (price.toLowerCase()).trim() !== "free") {
+			const el: Array<string> = price.trim().split("€").reverse();
+			el.splice(0, 1).reverse();
+			if(el.length === 1) {
+				return (
+					<p>{el[0]}€</p>
+				);
+			} else {
+				return (
+					<div className="game-card-price-box">
+						<p className="game-card-previous-price">{el[1]}€</p>
+						<p>{el[0]}€</p>
+					</div>
+				);
+			}
+		} else {
+			return (
+				<p>{price}</p>
+			);
+		}
+	};
+
 	return (
 		<main>
 			{
@@ -41,7 +67,7 @@ function Main(): ReactElement {
 								<img className="game-card-image" src={el.imgUrl} alt="game image"/>
 								<div className="game-card-info">
 									<div className="game-card-up">
-										<div className="game-card-up-part">
+										<div className="game-card-main-info">
 											{gameTitle(el.title)}
 											{playIcon(el.appId)}
 										</div>

@@ -1,14 +1,14 @@
-.box {
-	display: flex;
-	align-items: center;
-}
-
 .modal {
 	height: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: space-between;
+}
+
+.modal-el-box {
+	display: flex;
+	align-items: center;
 }
 
 .title {
@@ -18,11 +18,6 @@
 .modal-box {
 	display: flex;
 	align-items: center;
-}
-
-.sort-button {
-	margin-inline: auto;
-	border-radius: 10px;
 }
 
 .sort-value-box {
@@ -38,4 +33,9 @@
 .sort-value, .sort-value-box {
 	cursor: pointer;
 	margin-left: 0.5rem;
+}
+
+.sort-button {
+	margin-inline: auto;
+	border-radius: 10px;
 }

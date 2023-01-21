@@ -22,22 +22,10 @@ main {
 	background-color: #17323A;
 }
 
-.play-button {
-	top: -1rem;
-	position: relative;
-}
-
-.game-card-up {
-	height: 55%;
-	display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.game-card-down {
-	display: flex;
-  align-items: center;
-  justify-content: space-between;
+.game-card-image {
+	width: inherit;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 .game-card-info {
@@ -52,21 +40,28 @@ main {
   justify-content: space-between;
 }
 
-.game-card-image {
-	width: inherit;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+.game-card-up {
+	height: 55%;
+	display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.game-card-down img {
-	width: 25px;
-	cursor: pointer;
-}
-
-.game-card-up-part {
+.game-card-main-info {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+}
+
+.play-button {
+	top: -1rem;
+	position: relative;
+}
+
+.game-card-down {
+	display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .game-card-price-box {
@@ -79,26 +74,7 @@ main {
 	text-decoration: line-through;
 }
 
-
-
-
-/* width */
-::-webkit-scrollbar {
-  width: 5px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: #171A21;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #888;
-	border-radius: 10px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
+.game-card-down img {
+	width: 25px;
+	cursor: pointer;
 }
