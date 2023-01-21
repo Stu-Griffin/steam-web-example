@@ -31,13 +31,13 @@ function Header(): ReactElement {
 	const [likedListShow, setLikedListShow] = useState<boolean>(false);
 	const {likedGames, page}: AdditionalI = useSelector((state: RootState) => state.additional);
 
-	useEffect(() => {
-		searchAction();
-	}, [page]);
+	// useEffect(() => {
+	// 	searchAction();
+	// }, [page]);
 
-	const searchAction = (): void => {
+	const searchAction = async (): Promise<void> => {
 		dispatch(setChangeValue({key: "loaderStatus", value: true}));
-		getGames(dispatch, page, inputValue);
+		await getGames(dispatch, page, inputValue);
 		dispatch(setChangeValue({key: "loaderStatus", value: false}));
 	};
 

@@ -1,0 +1,58 @@
+.game-page {
+	width: 90%;
+	margin: auto;
+	color: white;
+	margin-top: 3rem;
+}
+
+.game-title {
+	text-decoration: underline;
+}
+
+.game-image {
+	margin-top: 1rem;
+	width: -webkit-fill-available;
+}
+
+.game-description {
+
+}
+
+.game-info-box {
+	display: flex;
+	margin-top: 0.5rem;
+	align-items: center;
+}
+
+.game-info-box-value {
+	cursor: pointer;
+	color: #66C0F4;
+	margin-left: 0.5rem;
+	text-decoration: none;
+}
+
+.game-info-area {
+	padding: 0.5rem 1rem;
+}
+
+.game-box {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.tag {
+	margin: 0.5rem;
+	cursor: pointer;
+	color: #67c1f5;
+	border-radius: 5px;
+	text-decoration: none;
+	padding: 0.25rem 0.25rem;
+  background: rgba( 103, 193, 245, 0.2 );
+}
+
+.tag-area {
+	display: flex;
+	flex-wrap: wrap;
+  align-items: center;
+}

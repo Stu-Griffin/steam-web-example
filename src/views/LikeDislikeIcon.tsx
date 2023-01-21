@@ -19,6 +19,7 @@ function LikeDislikeIcon({el}: PropsI): ReactElement {
 
 	const like = (el: GameI): void => {
 		dispatch(changeLikedGames({type: "add", value: el}));
+		localStorage.setItem("Liked-games", JSON.stringify([...likedGames, el]));
 	};
 
 	const getIcon = (): ReactElement => {
@@ -34,6 +35,7 @@ function LikeDislikeIcon({el}: PropsI): ReactElement {
 
 	const dislike = (el: GameI): void => {
 		dispatch(changeLikedGames({type: "remove", value: el}));
+		localStorage.setItem("Liked-games", JSON.stringify(likedGames.filter((game: GameI) => game.appId !== el.appId)));
 	};
 
 	return getIcon();

@@ -1,6 +1,7 @@
 import Loader from "./Loader";
 import { v4 as uuidv4 } from "uuid";
 import { GameI } from "../types/game";
+import { useNavigate } from "react-router-dom";
 import PlayIcon from "../assets/icons/play.svg";
 import LikeDislikeIcon from "./LikeDislikeIcon";
 import { AdditionalI } from "../types/additional";
@@ -11,6 +12,7 @@ import { AppDispatch, RootState } from "../types/redux";
 import { gameTitle, gamePrice } from "../controllers/game-card";
 
 function Main(): ReactElement {
+	const navigate = useNavigate();
 	const dispatch: AppDispatch = useDispatch();
 	const games: Array<GameI> = useSelector((state: RootState) => state.games);
 	const {likedGames, loaderStatus}: AdditionalI = useSelector((state: RootState) => state.additional);
@@ -20,13 +22,9 @@ function Main(): ReactElement {
 		(result) && dispatch(setChangeValue({key: "likedGames", value: JSON.parse(result)}));
 	}, []);
 
-	useEffect(() => {
-		localStorage.setItem("Liked-games", JSON.stringify(likedGames));
-	}, [likedGames]);
-
 	const playIcon = (appId: string|undefined): ReactElement|undefined => {
 		return (likedGames.find((likedEl: GameI) => likedEl.appId === appId)) &&
-			<div className="gray-circle play-button">
+			<div onClick={() => navigate({pathname: "/game", search: `?gameId=${appId}`})} className="gray-circle play-button">
 				<img src={PlayIcon} alt="play icon"/>
 			</div>;
 	};

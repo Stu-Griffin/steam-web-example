@@ -5,6 +5,7 @@ import "./style/header.css";
 import "./style/footer.css";
 import "./style/loader.css";
 import "./style/reusable.css";
+import "./style/game-page.css";
 import Main from "./views/Main";
 import Footer from "./views/Footer";
 import Header from "./views/Header";

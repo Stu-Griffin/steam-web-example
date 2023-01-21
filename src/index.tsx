@@ -4,16 +4,27 @@ import React from "react";
 import { store } from "./redux/store";
 import { Provider } from "react-redux";
 import ReactDOM from "react-dom/client";
+import GamePage from "./views/GamePage";
 import reportWebVitals from "./reportWebVitals";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
+const router = createBrowserRouter([
+	{
+		path: "/",
+		element: <App/>,
+	},
+	{
+		path: "game",
+		element: <GamePage/>,
+	},
+]);
 
-root.render(
-	// <React.StrictMode>
-	<Provider store={store}>
-		<App />
-	</Provider>
-	// </React.StrictMode>
+ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
+	<React.StrictMode>
+		<Provider store={store}>
+			<RouterProvider router={router} />
+		</Provider>
+	</React.StrictMode>
 );
 
 reportWebVitals();
